@@ -1,1 +1,14 @@
-{"generator":"Code Snippets v3.1.1","date_created":"2022-06-27 10:41","snippets":[{"name":"Email SMTP","desc":"Envoie des emails par SMTP en utilisant des variables d'environnement.","tags":["smtp","email"],"scope":"global","code":"add_action( 'phpmailer_init', 'setup_phpmailer_init' );\nfunction setup_phpmailer_init( $phpmailer ) {\n    $phpmailer->Host = getenv('WORDPRESS_SMTP_HOST'); \/\/ for example, smtp.mailtrap.io\n    $phpmailer->Port = getenv('WORDPRESS_SMTP_PORT'); \/\/ set the appropriate port: 465, 2525, etc.\n    $phpmailer->Username = getenv('WORDPRESS_SMTP_USERNAME'); \/\/ your SMTP username\n    $phpmailer->Password = getenv('WORDPRESS_SMTP_PASSWORD'); \/\/ your SMTP password\n    $phpmailer->SMTPAuth = true;\n    $phpmailer->SMTPSecure = 'tls'; \/\/ preferable but optional\n    $phpmailer->IsSMTP();\n}\n","priority":"10"}]}
+{
+  "generator": "Code Snippets v3.1.1",
+  "date_created": "2022-06-27 10:41",
+  "snippets": [
+    {
+      "name": "Email SMTP",
+      "desc": "Envoie des emails par SMTP en utilisant des variables d'environnement.",
+      "tags": ["smtp", "email"],
+      "scope": "global",
+      "code": "add_action( 'phpmailer_init', 'setup_phpmailer_init' );\nfunction setup_phpmailer_init( $phpmailer ) {\n    $phpmailer->Host = getenv('WORDPRESS_SMTP_HOST'); // for example, smtp.mailtrap.io\n    $phpmailer->Port = getenv('WORDPRESS_SMTP_PORT'); // set the appropriate port: 465, 2525, etc.\n    $phpmailer->Username = getenv('WORDPRESS_SMTP_USERNAME'); // your SMTP username\n    $phpmailer->Password = getenv('WORDPRESS_SMTP_PASSWORD'); // your SMTP password\n    $phpmailer->SMTPAuth = true;\n    $phpmailer->SMTPSecure = 'tls'; // preferable but optional\n    $phpmailer->IsSMTP();\n}\n",
+      "priority": "10"
+    }
+  ]
+}
